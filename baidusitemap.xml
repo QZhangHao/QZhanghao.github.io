@@ -3,14 +3,33 @@
 
 
     
-    
   <url>
-    <loc>http://zhanghao.website/2016/12/23/hello-world/</loc>
-    <lastmod>2016-12-23T15:00:59.103Z</lastmod>
+    <loc>http://zhanghao.website/2016/12/26/hello-world/</loc>
+    <lastmod>2016-12-26T05:59:12.388Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2016-12-23T15:00:59.103Z</pubTime>
+        <title>你好啊，刚刚开通个人博客.</title>
+        <pubTime>2016-12-25T16:00:00.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://zhanghao.website/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://zhanghao.website/2016/12/25/new-blog/</loc>
+    <lastmod>2016-12-25T03:33:34.198Z</lastmod>
+    <data>
+        <display>
+        <title>new blog</title>
+        <pubTime>2016-12-25T03:33:34.000Z</pubTime>
         
          
            
@@ -18,4 +37,5 @@
     </data>
     </url>
 
+    
 </urlset>

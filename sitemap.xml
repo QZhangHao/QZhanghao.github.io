@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://zhanghao.website/about/index.html</loc>
+    <loc>http://zhanghao.website/2016/12/26/hello-world/</loc>
     
-    <lastmod>2016-12-25T03:22:11.064Z</lastmod>
+    <lastmod>2016-12-26T05:59:12.388Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://zhanghao.website/2016/12/23/hello-world/</loc>
+    <loc>http://zhanghao.website/2016/12/25/new-blog/</loc>
     
-    <lastmod>2016-12-23T15:00:59.103Z</lastmod>
+    <lastmod>2016-12-25T03:33:34.198Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zhanghao.website/about/index.html</loc>
+    
+    <lastmod>2016-12-25T03:22:11.064Z</lastmod>
     
   </url>
   
