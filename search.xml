@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[android app 开机启动设置]]></title>
+      <url>%2F2016%2F12%2F31%2F20161231-android-app%2F</url>
+      <content type="text"><![CDATA[创建广播接受者，接收系统开机启动广播，继承自BroadcastReceiver实现抽象方法onReceive()1.1 代码如下 12345678910111213141516171819202122import android.content.BroadcastReceiver;import android.content.Context;import android.content.Intent;import com.hrkj.hrapsandroidclient.Activity.SplashScreenActivity;/** * Description:BootBroadcastReceiver * Author:ZhangHao * Time:2016-12-13 * GuID;a1afeb06-66b7-48f7-9f60-174ab958b6cc*/public class BootBroadcastReceiver extends BroadcastReceiver &#123; @Override public void onReceive(Context context, Intent intent) &#123; if(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED))&#123; Intent intent1 = new Intent(); intent1.setClass(context,SplashScreenActivity.class); intent1.addFlags(intent.FLAG_ACTIVITY_NEW_TASK); context.startActivity(intent1); &#125; &#125;&#125; 配置AndroidManifest.xml 再其中申明接收广播,申明到Application标签里 1234567&lt;receiver android:name=&quot;.Application.BootBroadcastReceiver&quot;&gt; &lt;intent-filter&gt; &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt; &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt; &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt; &lt;/intent-filter&gt; &lt;/receiver&gt; 增加权限 在AndroidManifest.xml 1&lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot; /&gt;]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[你好啊，刚刚开通个人博客.]]></title>
       <url>%2F2016%2F12%2F26%2Fhello-world%2F</url>
       <content type="text"><![CDATA[终于鼓捣上了。鼓捣了将近两天的Hexo 终于开通了。比较坎坷]]></content>

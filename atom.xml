@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhanghao.website/"/>
-  <updated>2016-12-26T05:59:12.388Z</updated>
+  <updated>2016-12-31T13:17:56.646Z</updated>
   <id>http://zhanghao.website/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android app 开机启动设置</title>
+    <link href="http://zhanghao.website/2016/12/31/20161231-android-app/"/>
+    <id>http://zhanghao.website/2016/12/31/20161231-android-app/</id>
+    <published>2016-12-31T13:10:53.000Z</published>
+    <updated>2016-12-31T13:17:56.646Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>创建广播接受者，接收系统开机启动广播，继承自BroadcastReceiver实现抽象方法onReceive()<br>1.1  代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">import android.content.BroadcastReceiver;</div><div class="line">import android.content.Context;</div><div class="line">import android.content.Intent;</div><div class="line">import com.hrkj.hrapsandroidclient.Activity.SplashScreenActivity;</div><div class="line"></div><div class="line">/**</div><div class="line">    * Description:BootBroadcastReceiver </div><div class="line">    * Author:ZhangHao</div><div class="line">    * Time:2016-12-13</div><div class="line">    * GuID;a1afeb06-66b7-48f7-9f60-174ab958b6cc</div><div class="line">*/</div><div class="line">public class BootBroadcastReceiver extends BroadcastReceiver &#123;</div><div class="line">        @Override</div><div class="line">        public void onReceive(Context context, Intent intent) &#123;</div><div class="line">            if(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED))&#123;</div><div class="line">            Intent intent1 = new Intent();</div><div class="line">            intent1.setClass(context,SplashScreenActivity.class);</div><div class="line">            intent1.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);</div><div class="line">            context.startActivity(intent1);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置AndroidManifest.xml 再其中申明接收广播,申明到Application标签里</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;receiver android:name=&quot;.Application.BootBroadcastReceiver&quot;&gt;</div><div class="line">      &lt;intent-filter&gt;</div><div class="line">          &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;</div><div class="line">          &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot; /&gt;</div><div class="line">          &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</div><div class="line">      &lt;/intent-filter&gt;</div><div class="line">  &lt;/receiver&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>增加权限 在AndroidManifest.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建广播接受者，接收系统开机启动广播，继承自BroadcastReceiver实现抽象方法onReceive()&lt;br&gt;1.1  代码如下&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;
+    
+    </summary>
+    
+      <category term="android" scheme="http://zhanghao.website/categories/android/"/>
+    
+    
+      <category term="android" scheme="http://zhanghao.website/tags/android/"/>
+    
+  </entry>
   
   <entry>
     <title>你好啊，刚刚开通个人博客.</title>
